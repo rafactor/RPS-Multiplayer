@@ -1,0 +1,131 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  
+}
+
+html{
+    font-family: sans-serif;
+
+}
+/* 
+** Initial Screen 
+*/
+
+ .initial-container, .main-wrapper {
+    min-width: 320px;
+    max-width: 450px;
+    height: 100vh;
+
+    text-align: center;
+    color: white;
+
+
+    -webkit-display: -webkit-box;
+    -webkit-display: -webkit-flex;
+    display: -webkit-box;
+
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    background-color: #594255;
+    flex-direction: column;
+   
+}
+.initial-wrapper-icons{
+    max-width: 300px;
+    margin-top: 20px;
+}
+
+
+.initial-image {
+   font-size: 60px;
+   margin: 20px;
+    
+}
+
+.fa-hand-rock{  
+    transform: rotate(90deg);
+    /* color: blue; */
+    
+}
+
+.title{
+    font-size: 3rem;
+    color: white;
+}
+
+/* end of initial screen */
+
+
+/* 
+** Select Icon Screen 
+*/
+
+.selectorWrapper{
+    width: 100%;
+    padding: 20px;
+    margin: 0;
+    max-width: 450px;
+}
+
+
+.icon-selector{
+   color: white;
+   font-size: 60px;
+   margin: 20px;
+   border: 2px solid white;
+   width: 80px;
+   height: 80px;
+   padding: 10px;
+   border-radius: 20px;
+}
+
+/*
+Player data
+*/
+#selectedAvatar{
+    color: white;
+    font-size: 100px;
+    margin: 20px;
+    /* border: 2px solid white; */
+    /* width: 80px;
+    height: 80px; */
+    /* padding: 10px; */
+    border-radius: 20px;
+}
+
+#input-name{
+    background-color: #594255;
+    border: 2px solid white;
+    color: white;
+    border-radius: 10px;
+    height: 40px;
+    font-size:20px;
+    padding: 0 10px;
+    text-align: center;
+}
+
+/*
+End of icon selection screen
+*/
+
+
+/*
+Player Detail
+*/
+
+#selectedAvatar{
+    width: 50vw;
+
+}
