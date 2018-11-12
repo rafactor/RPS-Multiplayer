@@ -7,9 +7,43 @@
   
 }
 
+:root{
+    --dpc: #512DA8; /* primary dark color */  
+    --lpc:  #D1C4E9; /* primary light color */
+    --pc: #673AB7; /* primary  color */
+    --ti: #FFFFFF; /* text icon color */
+    --ac: #E040FB; /* accent color */
+    --pt: #212121; /* primary text color */
+    --st: #757575; /* secondary text */
+    --dv: #BDBDBD; /* divider color */
+
+}
+
 html{
     font-family: sans-serif;
 
+}
+
+.fas{
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+.instructions{
+    margin: 10px 0;
+    padding: 5px 30px;
+    margin-bottom: 20px;
+}
+
+.inputText{
+    border: solid 2px var(--ti);
+    border-radius: 10px;
+    width: 70%;
+    padding: 10px;
+    background-color: var(--pc);
+    color: var(--ti);
+    font-size: 1rem;
+    
 }
 /* 
 ** Initial Screen 
@@ -21,7 +55,7 @@ html{
     height: 100vh;
 
     text-align: center;
-    color: white;
+    color: var(--ti);
 
 
     -webkit-display: -webkit-box;
@@ -38,7 +72,7 @@ html{
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-    background-color: #594255;
+    background-color: var(--pc);
     flex-direction: column;
    
 }
@@ -69,6 +103,30 @@ html{
 
 
 /* 
+** II - Sign in or Sign up
+*/
+
+.btn{
+    font-size: 2rem;
+    padding: 30px;
+    border: solid 4px var(--ti);
+    border-radius: 10px;
+    margin-bottom: 30px;
+    width: 70%;
+    color: var(--ti);
+    background-color: var(--pc)
+
+}
+
+/* 
+** II - Opponent
+*/
+
+.divPlayer, .divOpponent{
+    height: 50%;
+}
+
+/* 
 ** Select Icon Screen 
 */
 
@@ -89,6 +147,17 @@ html{
    height: 80px;
    padding: 10px;
    border-radius: 20px;
+}
+
+
+/*
+Nav Bar
+*/
+
+#backToAvatarSelection{
+    float: left;
+    font-size: 30px;
+    padding: 10px 5px;
 }
 
 /*
@@ -116,6 +185,31 @@ Player data
     text-align: center;
 }
 
+.navBar{
+    height: 50px;
+    width: 100%;
+    max-width: 450px;
+    position: fixed;
+    bottom: 0;
+    z-index: 1;
+}
+
+.fa-arrow-left, .fa-arrow-right{
+    position: fixed; 
+    bottom: 0px;
+    font-size: 60px;
+    margin: 20px;
+}
+.fa-arrow-right{
+    right: 0px;
+}
+.fa-arrow-left{
+    left:0
+}
+
+.errorMessage{
+    margin: 20px;
+}
 /*
 End of icon selection screen
 */
@@ -127,5 +221,8 @@ Player Detail
 
 #selectedAvatar{
     width: 50vw;
+}
 
+.gray{
+    color: gray;
 }
