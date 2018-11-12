@@ -43,21 +43,14 @@ html{
     background-color: var(--pc);
     color: var(--ti);
     font-size: 1rem;
-    
 }
-/* 
-** Initial Screen 
-*/
 
- .initial-container, .main-wrapper {
-    min-width: 320px;
-    max-width: 450px;
-    height: 100vh;
+.center{
+    align-items: center;
+    justify-content: center;
+}
 
-    text-align: center;
-    color: var(--ti);
-
-
+.flex{
     -webkit-display: -webkit-box;
     -webkit-display: -webkit-flex;
     display: -webkit-box;
@@ -72,9 +65,29 @@ html{
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-    background-color: var(--pc);
+    
+}
+
+.flex-row{
+    flex-direction: row;
+}
+
+.flex-column{
     flex-direction: column;
-   
+}
+/* 
+** Initial Screen 
+*/
+
+ .initial-container, .main-wrapper {
+    min-width: 320px;
+    max-width: 450px;
+    height: 100vh;
+
+    text-align: center;
+    color: var(--ti);
+    background-color: var(--dpc)
+  
 }
 .initial-wrapper-icons{
     max-width: 300px;
@@ -124,6 +137,37 @@ html{
 
 .divPlayer, .divOpponent{
     height: 50%;
+    width: 100%;
+}
+
+.divOpponent{
+    background-color: var(--pc);
+}
+
+.divOnline, .divComputer{
+    width: 130px;
+    height: 130px;
+    border: solid 2px var(--ti);
+    border-radius: 25px;
+    padding-top: 10px;
+    margin: 10px;
+}
+
+.playerAvatar, .playerScoreWrapp{
+    width: 130px;
+    height: 130px;
+    /* border: solid 2px var(--ti); */
+    border-radius: 25px;
+    padding-top: 10px;
+    margin: 10px;
+}
+
+.playerScoreWrapp{
+    text-align: left;
+}
+
+#wins, #losses, #points{
+    margin-bottom: 10px;
 }
 
 /* 

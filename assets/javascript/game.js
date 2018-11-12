@@ -39,10 +39,10 @@ var avatar = ['fas fa-user-alt', 'fas fa-user-ninja', 'fas fa-user-tie',
 var screen = {
     initial() {
         let $container = $('<div>');
-        $container.addClass('initial-container')
+        $container.addClass('initial-container flex flex-column')
 
         let $splash = $('<div>');
-        $splash.addClass('initial-wrapper-icons')
+        $splash.addClass('initial-wrapper-icons flex flex-row')
 
         let $title = $('<h1>');
         $title.addClass('title').html('i c o n i c')
@@ -58,7 +58,7 @@ var screen = {
     login(){
         func.clearAll()
         let $mainContainer = $('<div>');
-        $mainContainer.addClass('main-wrapper');
+        $mainContainer.addClass('main-wrapper flex flex-column');
 
         let $login = $('<button>');
         $login.addClass('btn').attr({
@@ -78,7 +78,7 @@ var screen = {
 
         func.clearAll()
         let $mainContainer = $('<div>');
-        $mainContainer.addClass('main-wrapper');
+        $mainContainer.addClass('main-wrapper flex flex-column');
 
         let $placeholder = $('<div>')
         $placeholder.addClass('placeholder')
@@ -123,7 +123,7 @@ var screen = {
         $('body').empty();
 
         let $mainContainer = $('<div>');
-        $mainContainer.addClass('main-wrapper');
+        $mainContainer.addClass('main-wrapper flex flex-column');
 
         let $instruction = $('<h3>');
         $instruction.addClass('instruction').text('choose your avatar');
@@ -144,27 +144,71 @@ var screen = {
         $('body').append($mainContainer)
     },
     opponent(){
+        console.log('opponent')
         let $main = $('.main-wrapper')
         $main.empty()
 
         let $player = $('<div>')
-        $player.addClass('divPlayer')
+        $player.addClass('divPlayer center flex flex-row')
+
+        let $online = $('<div>')
+        $online.addClass('divOnline center')
+        
+        let $onlineLabel = $('<p>')
+        $onlineLabel.text('vs friend')
+
+        let $computer = $('<div>')
+        $computer.addClass('divComputer center')
+
+        let $computerLabel = $('<p>')
+        $computerLabel.text('vs computer')
 
         let $opponent = $('<div>');
-        $opponent.addClass('divOpponent')
+        $opponent.addClass('divOpponent center flex flex-row')
 
-        icon.selected($player)
+        
+        icon.friend($online)
+        icon.robot($computer)
+     
+        $online.append($onlineLabel)
+        $computer.append($computerLabel)
+        $opponent.append($online, $computer)
+        
+        $main.append( $opponent, $player)
 
-        let $online = $('<button>');
-        $online.addClass('btn-sm').attr('id','online').text('multiplayer online')
+        screen.playerCard(n)
+    },
+    playerCard(n){
+        let $playerName = $('<h4>')
+        $playerName.attr('id','name').text(player[n].username)
 
-        let $offline = $('<button>');
-        $offline.addClass('btn-sm').attr('id','online').text('vs computer')
+        let $playerWrapp = $('<div>');
+        $playerWrapp.addClass('playerAvatar')
 
-        $opponent.append($online, $offline);
-        $main.append($player, $opponent)
-    
+        let $scoreWrapp = $('<div>')
+        $scoreWrapp.addClass('playerScoreWrapp')
 
+        let $wins = $('<p>')
+        $wins.html('Wins: <span id="scoreWins">0</span>')
+        .attr('id','wins');
+
+        let $losses = $('<p>')
+        $losses.html('Losses: <span id="scoreLosses">0</span>')
+        .attr('id','losses');
+
+        let $points = $('<p>')
+        $points.html('Points: <span id="scorePoints">0</span>')
+        .attr('id','points');
+
+
+        $scoreWrapp.append($points, $wins, $losses)
+
+        icon.selected($playerWrapp)
+
+        $playerWrapp.append($playerName)
+
+        $('.divPlayer').append($playerWrapp, $scoreWrapp);
+        // $player.append($playerName);
     },
 
 
@@ -172,7 +216,7 @@ var screen = {
 
    
     playerDetail(n) {
-        let $container = $('.main-wrapper');
+        let $container = $('.main-wrapper flex flex-column');
         $container.empty();
 
         let $navWrapper = $('<div>');
@@ -281,6 +325,9 @@ var func = {
     },
     clearAll() {
         $('body').empty();
+    },
+    vsComputer(){
+        
     }
 }
 var icon = {
@@ -337,8 +384,24 @@ var icon = {
             'id': id,
         });
         e.append($image)
+    },
+    friend(e) {
+        let $image = $('<i>');
+        $image.addClass('fas fa-user-friends').attr({
+            'id': 'friend'
+        });
+        e.append($image)
+    },
+    robot(e) {
+        let $image = $('<i>');
+        $image.addClass('fas fa-robot').attr({
+            'id': 'robot'
+        });
+        e.append($image)
     }
 }
+
+
 
 function Player(first, last, email) {
     this.firstName = first;
@@ -359,7 +422,8 @@ $(document).on('click', "#avatarSelection", screen.iconSelection)
 $(document).on('click',"#login", screen.signin);
 $(document).on('click',"#newUser", screen.player);
 
-
+$(document).on("click", ".divComputer", func.vsComputer)
+$(document).on("click", ".divOnline", func.multiplayer)
 
 
 
