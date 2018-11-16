@@ -1,0 +1,272 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  
+}
+
+:root{
+    --dpc: #512DA8; /* primary dark color */  
+    --lpc:  #D1C4E9; /* primary light color */
+    --pc: #673AB7; /* primary  color */
+    --ti: #FFFFFF; /* text icon color */
+    --ac: #E040FB; /* accent color */
+    --pt: #212121; /* primary text color */
+    --st: #757575; /* secondary text */
+    --dv: #BDBDBD; /* divider color */
+
+}
+
+html{
+    font-family: sans-serif;
+
+}
+
+.fas{
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+.instructions{
+    margin: 10px 0;
+    padding: 5px 30px;
+    margin-bottom: 20px;
+}
+
+.inputText{
+    border: solid 2px var(--ti);
+    border-radius: 10px;
+    width: 70%;
+    padding: 10px;
+    background-color: var(--pc);
+    color: var(--ti);
+    font-size: 1rem;
+}
+
+.center{
+    align-items: center;
+    justify-content: center;
+}
+
+.flex{
+    -webkit-display: -webkit-box;
+    -webkit-display: -webkit-flex;
+    display: -webkit-box;
+
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    
+}
+
+.flex-row{
+    flex-direction: row;
+}
+
+.flex-column{
+    flex-direction: column;
+}
+/* 
+** Initial Screen 
+*/
+
+ .initial-container, .main-wrapper {
+    min-width: 320px;
+    max-width: 450px;
+    height: 100vh;
+
+    text-align: center;
+    color: var(--ti);
+    background-color: var(--dpc)
+  
+}
+.initial-wrapper-icons{
+    max-width: 300px;
+    margin-top: 20px;
+}
+
+
+.initial-image {
+   font-size: 60px;
+   margin: 20px;
+    
+}
+
+.fa-hand-rock{  
+    transform: rotate(90deg);
+    /* color: blue; */
+    
+}
+
+.title{
+    font-size: 3rem;
+    color: white;
+}
+
+/* end of initial screen */
+
+
+/* 
+** II - Sign in or Sign up
+*/
+
+.btn{
+    font-size: 2rem;
+    padding: 30px;
+    border: solid 4px var(--ti);
+    border-radius: 10px;
+    margin-bottom: 30px;
+    width: 70%;
+    color: var(--ti);
+    background-color: var(--pc)
+
+}
+
+/* 
+** II - Opponent
+*/
+
+.divPlayer, .divOpponent{
+    height: 50%;
+    width: 100%;
+}
+
+.divOpponent{
+    background-color: var(--pc);
+}
+
+.divOnline, .divComputer{
+    width: 130px;
+    height: 130px;
+    border: solid 2px var(--ti);
+    border-radius: 25px;
+    padding-top: 10px;
+    margin: 10px;
+}
+
+.playerAvatar, .playerScoreWrapp{
+    width: 130px;
+    height: 130px;
+    /* border: solid 2px var(--ti); */
+    border-radius: 25px;
+    padding-top: 10px;
+    margin: 10px;
+}
+
+.playerScoreWrapp{
+    text-align: left;
+}
+
+#wins, #losses, #points{
+    margin-bottom: 10px;
+}
+
+/* 
+** Select Icon Screen 
+*/
+
+.selectorWrapper{
+    width: 100%;
+    padding: 20px;
+    margin: 0;
+    max-width: 450px;
+}
+
+
+.icon-selector{
+   color: white;
+   font-size: 60px;
+   margin: 20px;
+   border: 2px solid white;
+   width: 80px;
+   height: 80px;
+   padding: 10px;
+   border-radius: 20px;
+}
+
+
+/*
+Nav Bar
+*/
+
+#backToAvatarSelection{
+    float: left;
+    font-size: 30px;
+    padding: 10px 5px;
+}
+
+/*
+Player data
+*/
+#selectedAvatar{
+    color: white;
+    font-size: 100px;
+    margin: 20px;
+    /* border: 2px solid white; */
+    /* width: 80px;
+    height: 80px; */
+    /* padding: 10px; */
+    border-radius: 20px;
+}
+
+#input-name{
+    background-color: #594255;
+    border: 2px solid white;
+    color: white;
+    border-radius: 10px;
+    height: 40px;
+    font-size:20px;
+    padding: 0 10px;
+    text-align: center;
+}
+
+.navBar{
+    height: 50px;
+    width: 100%;
+    max-width: 450px;
+    position: fixed;
+    bottom: 0;
+    z-index: 1;
+}
+
+.fa-arrow-left, .fa-arrow-right{
+    position: fixed; 
+    bottom: 0px;
+    font-size: 60px;
+    margin: 20px;
+}
+.fa-arrow-right{
+    right: 0px;
+}
+.fa-arrow-left{
+    left:0
+}
+
+.errorMessage{
+    margin: 20px;
+}
+/*
+End of icon selection screen
+*/
+
+
+/*
+Player Detail
+*/
+
+#selectedAvatar{
+    width: 50vw;
+}
+
+.gray{
+    color: gray;
+}

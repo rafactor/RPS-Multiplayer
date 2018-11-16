@@ -2,38 +2,133 @@
 <html>
 
 <head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>RPS Multiplayer</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>RPS Multiplayer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+        crossorigin="anonymous">
 
 
+        <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
+    <!-- Firebase App is always required and must be first -->
+        <!-- <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase-app.js"></script> -->
 
+   
+
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
+   
+   <!-- jQuery -->
+ <script src="assets/javascript/jquery-3.3.1.js"></script>
+ 
 </head>
 
-
 <body>
+    <div class='title'>
+        <h1>
+            <i class="far fa-hand-rock"></i>
+            <i class="far fa-hand-paper"></i>
+            <i class="far fa-hand-scissors"></i>
+            Multiplayer
+        </h1>
+    </div>
+    <div class='container'>
+        <aside>
+            <div class='online'>
+                <div class='sectionHeader'>
+                    <i class="fas fa-globe"></i>
+                    Online players
+                </div>
+                <div id='onlinePlayers'>
+                    <div class="container center column" id="sign-wrapper">
+                        <!-- <button id="signIn">Sign In</button> -->
+                        <!-- <button  id="signUp">Register</button> -->
+
+                    </div>
+                </div>
+            </div>
+
+            <div class='chat'>
+                <div class='sectionHeader'>
+                    <i class="far fa-comments"></i>
+                    chat
+                </div>
+                <div id='chatWindown'>
+
+                </div>
+            </div>
+        </aside>
+        <section class='game container row'>
+            <div class="divopponent">
+
+                <div class="opponentHeader">
+                    <i class="fas fa-sync player-icon"></i>
+                    <span id='opponent'>Computer</span>
+                </div>
+                <div class="avatar">
+                    <img src="assets/images/avatar2d.png">
+                    <!-- <p id='opponentName'>Rafael</p> -->
+                </div>
+
+                <div class="score">
+                    <h3>Current Match</h3>
+                    <p>Points: <span id='opponentPoints'>0</span></p>
+
+                    <h3>Total Matches</h3>
+                    <p>Wins: <span id='opponentWins'>0</span></p>
+                    <p>Losses: <span id='opponentLosses'>0</span></p>
+                </div>
+
+
+                <div class='hands container hide'>
+                    <i class="far fa-hand-rock option"></i>
+                    <i class="far fa-hand-paper option"></i>
+                    <i class="far fa-hand-scissors option"></i>
+                </div>
+            </div>
+            <div class='divplayer'>
+                <div class="playerHeader">
+                    <i class="far fa-user-circle player-icon"></i>
+                    <span id='player'>You</span>
+                </div>
+
+                <div class="avatar">
+                    <img src="assets/images/avatar1d.png">
+                    <!-- <p id='playerName'>Rafael</p> -->
+                </div>
+
+                <div class="score">
+                    <h3>Current Match</h3>
+                    <p>Points: <span id='playerPoints'>0</span></p>
+
+                    <h3>Total Matches</h3>
+                    <p>Wins: <span id='playerWins'>0</span></p>
+                    <p>Losses: <span id='playerLosses'>0</span></p>
+
+                </div>
+
+                <div class='hands container hide'>
+                    <i class="far fa-hand-rock option"></i>
+                    <i class="far fa-hand-paper option"></i>
+                    <i class="far fa-hand-scissors option"></i>
+                </div>
+                <div class='start container center'>
+                    <button id='start'>Press to Play</button>
+                </div>
+            </div>
+
+        </section>
+    </div>
 
 </body>
 
-<!-- <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyCBeX6_5k8uBvj-A1kSroEMxJEQWJxBbmk",
-    authDomain: "rps-multiplayer-7196f.firebaseapp.com",
-    databaseURL: "https://rps-multiplayer-7196f.firebaseio.com",
-    projectId: "rps-multiplayer-7196f",
-    storageBucket: "rps-multiplayer-7196f.appspot.com",
-    messagingSenderId: "165306718406"
-  };
-  firebase.initializeApp(config);
-</script> -->
-
-<script src="assets/javascript/jquery-3.3.1.js"></script>
-<!-- <script src="assets/javascript/bootstrap.bundle.js"></script> -->
 <script src="assets/javascript/game.js"></script>
+
+<!-- Add additional services that you want to use -->
+<!-- <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.5.8/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.5.8/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.5.8/firebase-messaging.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.5.8/firebase-functions.js"></script> -->
 
 </html>
